@@ -114,6 +114,7 @@ const products = [
 export default function ProductList() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
     <div>
