@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { increment, incrementAsync } from "../authSlice";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { selectLoggedInUser, createUserAsync } from "../authSlice";
 
 export default function Signup() {
   const dispatch = useDispatch();
@@ -12,11 +13,15 @@ export default function Signup() {
     watch,
     formState: { errors },
   } = useForm();
+  const user = useSelector(selectLoggedInUser);
+
   console.log(errors); // watch input value by passing the name of it
+
   return (
     <div>
       <div>
         <>
+          {user?.email}
           <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
               <img
@@ -34,6 +39,12 @@ export default function Signup() {
                 noValidate
                 className="space-y-6"
                 onSubmit={handleSubmit((data) => {
+                  dispatch(
+                    createUserAsync({
+                      email: data.email,
+                      password: data.password,
+                    })
+                  );
                   console.log(data);
                 })}
               >
@@ -89,10 +100,11 @@ export default function Signup() {
                       {...register("password", {
                         required: "password is required",
                         pattern: {
-                          value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
-                        message:`- at least 8 characters
+                          value:
+                            /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
+                          message: `- at least 8 characters
                         - must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number
-                        - Can contain special characters`
+                        - Can contain special characters`,
                         },
                       })}
                       type="password"
@@ -118,7 +130,9 @@ export default function Signup() {
                       id="confirmPassword"
                       {...register("confirmPassword", {
                         required: "password is required",
-                        validate: (value, formValues) => value === formValues.password || "Passwords do not match",
+                        validate: (value, formValues) =>
+                          value === formValues.password ||
+                          "Passwords do not match",
                       })}
                       type="password"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
