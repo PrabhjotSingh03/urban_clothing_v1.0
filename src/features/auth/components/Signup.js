@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, incrementAsync } from "../authSlice";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 export default function Signup() {
   const dispatch = useDispatch();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
   return (
     <div>
@@ -36,7 +38,7 @@ export default function Signup() {
                   <div className="mt-2">
                     <input
                       id="email"
-                      name="email"
+                      {...register("email")}
                       type="email"
                       autoComplete="email"
                       required
