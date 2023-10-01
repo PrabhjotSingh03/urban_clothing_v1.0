@@ -2339,6 +2339,11 @@
       "email": "test@gmail.com",
       "password": "Test-123",
       "id": 1
-    } 
+    },
+    {
+      "email": "prabhjot.sains@gmail.com",
+      "password": "Pssains-123",
+      "id": 2
+    }
   ]
 }
