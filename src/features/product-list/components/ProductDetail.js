@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { selectProductById, fetchAllProductByIdAsync } from "../productSlice";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { addToCartAsync } from "../../cart/cartSlice";
+import { selectLoggedInUser } from "../../auth/authSlice";
 
 const colors = [
   { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
@@ -39,6 +41,13 @@ export default function ProductDetail() {
   const product = useSelector(selectProductById);
   const dispatch = useDispatch();
   const params = useParams();
+  const user = useSelector(selectLoggedInUser);
+  const handleCart = (e) => {
+    e.preventDefault();
+    dispatch(addToCartAsync(
+      {...product,quantity:1,user:user.id}
+    ));
+  }
 
   useEffect(() => {
     dispatch(fetchAllProductByIdAsync(params.id));
@@ -284,6 +293,7 @@ export default function ProductDetail() {
                 </div>
 
                 <button
+                  onClick={handleCart}
                   type="submit"
                   className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
