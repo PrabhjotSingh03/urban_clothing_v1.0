@@ -7,6 +7,8 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import classNames from "classnames";
+import { useSelector } from "react-redux";
+import { selectItems } from "../cart/cartSlice";
 
 const user = {
   name: "Tom Cook",
@@ -22,6 +24,8 @@ const userNavigation = [
 ];
 
 function NavBar({ children }) {
+  const items = useSelector(selectItems);
+
   return (
     <>
       <div className="min-h-full">
@@ -33,11 +37,11 @@ function NavBar({ children }) {
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <Link to="/">
-                      <img
-                        className="h-8 w-8"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                        alt="Your Company"
-                      />
+                        <img
+                          className="h-8 w-8"
+                          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                          alt="Your Company"
+                        />
                       </Link>
                     </div>
                     <div className="hidden md:block">
@@ -74,9 +78,11 @@ function NavBar({ children }) {
                           />
                         </button>
                       </Link>
-                      <span className="inline-flex items-center rounded-md mb-7 -ml-3 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                        2
-                      </span>
+                      {items.length > 0 && (
+                        <span className="inline-flex items-center rounded-md mb-7 -ml-3 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                          {items.length}
+                        </span>
+                      )}
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
@@ -105,7 +111,7 @@ function NavBar({ children }) {
                               <Menu.Item key={item.name}>
                                 {({ active }) => (
                                   <Link
-                                  to = {item.link}
+                                    to={item.link}
                                     className={classNames(
                                       active ? "bg-gray-100" : "",
                                       "block px-4 py-2 text-sm text-gray-700"
@@ -189,9 +195,11 @@ function NavBar({ children }) {
                         />
                       </button>
                     </Link>
-                    <span className="inline-flex items-center rounded-md mb-7 -ml-3 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                      2
-                    </span>
+                    {items.length > 0 && (
+                      <span className="inline-flex items-center rounded-md mb-7 -ml-3 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                        {items.length}
+                      </span>
+                    )}
                   </div>
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (

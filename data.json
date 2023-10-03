@@ -2367,6 +2367,68 @@
       ],
       "quantity": 1,
       "user": 1
+    },
+    {
+      "id": 13,
+      "title": "Fog Scent Xpressio Perfume",
+      "description": "Product details of Best Fog Scent Xpressio Perfume 100ml For Men cool long lasting perfumes for Men",
+      "price": 13,
+      "discountPercentage": 8.14,
+      "rating": 4.59,
+      "stock": 61,
+      "brand": "Fog Scent Xpressio",
+      "category": "fragrances",
+      "thumbnail": "https://i.dummyjson.com/data/products/13/thumbnail.webp",
+      "images": [
+        "https://i.dummyjson.com/data/products/13/1.jpg",
+        "https://i.dummyjson.com/data/products/13/2.png",
+        "https://i.dummyjson.com/data/products/13/3.jpg",
+        "https://i.dummyjson.com/data/products/13/4.jpg",
+        "https://i.dummyjson.com/data/products/13/thumbnail.webp"
+      ],
+      "quantity": 2,
+      "user": 1
+    },
+    {
+      "id": 59,
+      "title": "Spring and summershoes",
+      "description": "Comfortable stretch cloth, lightweight body; ,rubber sole, anti-skid wear;",
+      "price": 20,
+      "discountPercentage": 8.71,
+      "rating": 4.33,
+      "stock": 137,
+      "brand": "Sneakers",
+      "category": "mens-shoes",
+      "thumbnail": "https://i.dummyjson.com/data/products/59/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/59/1.jpg",
+        "https://i.dummyjson.com/data/products/59/2.jpg",
+        "https://i.dummyjson.com/data/products/59/3.jpg",
+        "https://i.dummyjson.com/data/products/59/4.jpg",
+        "https://i.dummyjson.com/data/products/59/thumbnail.jpg"
+      ],
+      "quantity": 1,
+      "user": 1
+    },
+    {
+      "id": 10,
+      "title": "HP Pavilion 15-DK1056WM",
+      "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+      "price": 1099,
+      "discountPercentage": 6.18,
+      "rating": 4.43,
+      "stock": 89,
+      "brand": "HP Pavilion",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
+      "images": [
+        "https://i.dummyjson.com/data/products/10/1.jpg",
+        "https://i.dummyjson.com/data/products/10/2.jpg",
+        "https://i.dummyjson.com/data/products/10/3.jpg",
+        "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
+      ],
+      "quantity": 1,
+      "user": 2
     }
   ]
 }
