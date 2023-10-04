@@ -9,6 +9,7 @@ import React, { useState, Fragment } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { selectLoggedInUser, updateUserAsync } from "../auth/authSlice";
+import { createOrderAsync } from "../order/orderSlice";
 
 function Checkout() {
   const dispatch = useDispatch();
@@ -52,8 +53,8 @@ function Checkout() {
   };
 
   const handleOrder= (e) => {
-    setPaymentMethod(e.target.value);
-    console.log(e.target.value);
+    const order = {items, totalAmount, totalitems, user, selectedAddress, paymentMethod}
+    dispatch(createOrderAsync(order));
   };
 
   return (
@@ -440,12 +441,12 @@ function Checkout() {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div className="mt-6">
-                  <button
+                  <div
                     onClick={handleOrder}
-                    className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                    className="flex items-center cursor-pointer justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                   >
                     Order Now and Pay
-                  </button>
+                  </div>
                 </div>
                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                   <p>
