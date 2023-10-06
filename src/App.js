@@ -11,6 +11,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { selectLoggedInUser } from "./features/auth/authSlice";
+import OrderSuccess from "./pages/OrderSuccess";
 
 import {
   createBrowserRouter,
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <PageNotFound></PageNotFound>,
+  },
+  {
+    path: "/ordersuccess",
+    element: <OrderSuccess></OrderSuccess>,
   },
 ]);
 
