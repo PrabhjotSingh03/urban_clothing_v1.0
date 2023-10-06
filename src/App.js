@@ -20,6 +20,7 @@ import {
 } from "react-router-dom";
 import Protected from "./features/auth/components/Protected";
 import { fetchItemsByUserIdAsync } from "./features/cart/cartSlice";
+import PageNotFound from "./pages/404";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/productdetail/:id",
     element: <ProductDetailPage></ProductDetailPage>,
+  },
+  {
+    path: "*",
+    element: <PageNotFound></PageNotFound>,
   },
 ]);
 
