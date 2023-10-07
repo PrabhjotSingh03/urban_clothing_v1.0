@@ -16,10 +16,10 @@ const user = {
   imageUrl:
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
-const navigation = [{ name: "Urban Clothing", href: "/", current: true }];
+const navigation = [{ name: "Urban Clothing", link: "/", current: true }];
 const userNavigation = [
-  { name: "Your Profile", link: "/" },
-  { name: "Settings", link: "/" },
+  { name: "Your Profile", link: "/profile" },
+  { name: "Orders", link: "/orders" },
   { name: "Sign out", link: "/login" },
 ];
 
@@ -40,7 +40,7 @@ function NavBar({ children }) {
                         <img
                           className="h-8 w-8"
                           src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                          alt="Your Company"
+                          alt="Urban Clothing Logo"
                         />
                       </Link>
                     </div>
@@ -49,7 +49,7 @@ function NavBar({ children }) {
                         {navigation.map((item) => (
                           <a
                             key={item.name}
-                            href={item.href}
+                            href={item.link}
                             className={classNames(
                               item.current
                                 ? "bg-gray-900 text-white"
@@ -154,7 +154,7 @@ function NavBar({ children }) {
                     <Disclosure.Button
                       key={item.name}
                       as="a"
-                      href={item.href}
+                      href={item.link}
                       className={classNames(
                         item.current
                           ? "bg-gray-900 text-white"
@@ -206,7 +206,7 @@ function NavBar({ children }) {
                       <Disclosure.Button
                         key={item.name}
                         as="a"
-                        href={item.href}
+                        href={item.link}
                         className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                       >
                         {item.name}
