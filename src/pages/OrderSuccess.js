@@ -1,15 +1,29 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import { cartResetAsync } from "../features/cart/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLoggedInUser } from "../features/auth/authSlice";
+import { orderReset } from "../features/order/orderSlice";
 
-function OrderSuccess({order}) {
+function OrderSuccess() {
+  const params = useParams();
+  const user = useSelector(selectLoggedInUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(cartResetAsync(user.id));  //reset cart
+    dispatch(orderReset()); //reset current order
+  },[dispatch, user.id]);
+
   return (
     <>
-    {/* {!order && <Navigate to="/" replace={true}></Navigate>} */}
+    {!params.id && <Navigate to="/" replace={true}></Navigate>}
     <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="text-center">
         <p className="text-base font-semibold text-indigo-600">Your Order is Successfully Placed</p>
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-          {/* Order Number #{order?.id} */}
+          Order Number #{params?.id}
         </h1>
         <p className="mt-6 text-base leading-7 text-gray-600">
           You will receive an email confirmation shortly.
