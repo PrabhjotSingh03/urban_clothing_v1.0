@@ -20,7 +20,7 @@ const navigation = [{ name: "Urban Clothing", link: "/", current: true }];
 const userNavigation = [
   { name: "Profile", link: "/profile" },
   { name: "Orders", link: "/orders" },
-  { name: "Sign out", link: "/login" },
+  { name: "Sign Out", link: "/logout" },
 ];
 
 function NavBar({ children }) {
