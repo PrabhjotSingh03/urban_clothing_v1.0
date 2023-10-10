@@ -45,11 +45,8 @@ export default function Login() {
                       password: data.password,
                     })
                   );
-                  console.log(data);
                 })}
                 className="space-y-6"
-                action="#"
-                method="POST"
               >
                 <div>
                   <div className="flex items-center justify-between">

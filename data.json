@@ -2338,6 +2338,7 @@
     {
       "email": "test@gmail.com",
       "password": "Test-123",
+      "role": "user",
       "addresses": [
         {
           "name": "Test Address Successful",
@@ -2365,6 +2366,7 @@
     {
       "email": "prabhjot.sains@gmail.com",
       "password": "Pssains-123",
+      "role": "user",
       "addresses": [
         {
           "name": "Prabhjot Singh",
@@ -2378,6 +2380,13 @@
         }
       ],
       "id": 2
+    },
+    {
+      "email": "admin@test.com",
+      "password": "Admin-123",
+      "addresses": [],
+      "role": "admin",
+      "id": 3
     }
   ],
   "cart": [
