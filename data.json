@@ -2340,12 +2340,22 @@
       "password": "Test-123",
       "addresses": [
         {
-          "name": "Test User",
+          "name": "Test Address Successful",
+          "email": "test@gmail.com",
+          "phone": "1234567890",
+          "country": "Canada",
+          "street": "100 Main ",
+          "city": "Toronto",
+          "state": "Ontario",
+          "postalcode": "123456"
+        },
+        {
+          "name": "Add Address Successful",
           "email": "test@gmail.com",
           "phone": "1234567890",
           "country": "Canada",
           "street": "110 Main ",
-          "city": "Brampton",
+          "city": "Ajax",
           "state": "Ontario",
           "postalcode": "123456"
         }
@@ -2370,7 +2380,25 @@
       "id": 2
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "discountPercentage": 15.46,
+      "rating": 4.09,
+      "stock": 36,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+      ],
+      "quantity": 1,
+      "user": 1,
+      "id": 1
+    }
+  ],
   "orders": [
     {
       "items": [
@@ -2583,6 +2611,62 @@
       "paymentMethod": "cash",
       "status": "pending",
       "id": 3
+    },
+    {
+      "items": [
+        {
+          "title": "HP Pavilion 15-DK1056WM",
+          "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+          "price": 1099,
+          "discountPercentage": 6.18,
+          "rating": 4.43,
+          "stock": 89,
+          "brand": "HP Pavilion",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
+          "images": [
+            "https://i.dummyjson.com/data/products/10/1.jpg",
+            "https://i.dummyjson.com/data/products/10/2.jpg",
+            "https://i.dummyjson.com/data/products/10/3.jpg",
+            "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 1099,
+      "totalitems": 1,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "Test-123",
+        "addresses": [
+          {
+            "name": "TestUser",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "110 Main ",
+            "city": "Brampton",
+            "state": "Ontario",
+            "postalcode": "123456"
+          }
+        ],
+        "id": 1
+      },
+      "selectedAddress": {
+        "name": "TestUser",
+        "email": "test@gmail.com",
+        "phone": "1234567890",
+        "country": "Canada",
+        "street": "110 Main ",
+        "city": "Brampton",
+        "state": "Ontario",
+        "postalcode": "123456"
+      },
+      "paymentMethod": "card",
+      "status": "pending",
+      "id": 4
     }
   ]
 }

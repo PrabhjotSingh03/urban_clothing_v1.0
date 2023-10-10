@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { selectLoggedInUser, updateUserAsync } from "../auth/authSlice";
 import { createOrderAsync } from "../order/orderSlice";
 import { selectOrderCurrent } from "../order/orderSlice";
+import { selectUserInfo } from "../user/userSlice";
 
 function Checkout() {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ function Checkout() {
   const [selectedAddress, setSelectedAddress] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState(null);
 
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectUserInfo);
 
   const handleAddress = (e) => {
     setSelectedAddress(user.addresses[e.target.value]);

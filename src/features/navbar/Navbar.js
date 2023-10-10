@@ -18,7 +18,7 @@ const user = {
 };
 const navigation = [{ name: "Urban Clothing", link: "/", current: true }];
 const userNavigation = [
-  { name: "Your Profile", link: "/profile" },
+  { name: "Profile", link: "/profile" },
   { name: "Orders", link: "/orders" },
   { name: "Sign out", link: "/login" },
 ];
