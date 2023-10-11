@@ -377,10 +377,12 @@
       "category": "groceries",
       "thumbnail": "https://i.dummyjson.com/data/products/21/thumbnail.png",
       "images": [
+        "https://i.dummyjson.com/data/products/21/thumbnail.png",
         "https://i.dummyjson.com/data/products/21/1.png",
         "https://i.dummyjson.com/data/products/21/2.jpg",
         "https://i.dummyjson.com/data/products/21/3.jpg"
-      ]
+      ],
+      "deleted": true
     },
     {
       "id": 22,

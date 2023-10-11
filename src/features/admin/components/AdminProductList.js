@@ -535,6 +535,11 @@ function ProductGrid({ products }) {
                       </p>
                     </div>
                   </div>
+                  {product.deleted && (
+                    <div>
+                      <p className="text-sm text-red-500">Deleted Product</p>
+                    </div>
+                  )}
                 </div>
               </Link>
               <div className="py-6 col-span-full">
