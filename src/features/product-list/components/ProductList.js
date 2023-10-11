@@ -494,13 +494,13 @@ function Pagination({ page, setPage, handlePage, totalItems }) {
     <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
       <div className="flex flex-1 justify-between sm:hidden">
         <div
-          onClick={(e) => handlePage(page>1? page - 1:page)}
+          onClick={(e) => handlePage(page > 1 ? page - 1 : page)}
           className="relative cursor-pointer inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
         >
           Previous
         </div>
-        <div 
-          onClick={(e) => handlePage(page<totalPages? page + 1:page)}
+        <div
+          onClick={(e) => handlePage(page < totalPages ? page + 1 : page)}
           className="relative cursor-pointer ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
         >
           Next
@@ -528,35 +528,33 @@ function Pagination({ page, setPage, handlePage, totalItems }) {
             aria-label="Pagination"
           >
             <div
-              onClick={(e) => handlePage(page>1? page - 1:page)}
+              onClick={(e) => handlePage(page > 1 ? page - 1 : page)}
               className="relative cursor-pointer inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Previous</span>
               <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
             </div>
             {/* Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" */}
-            {Array.from({ length: totalPages}).map(
-              (el, index) => (
-                <div
-                  key={index}
-                  onClick={(e) => handlePage(index + 1)}
-                  aria-current="page"
-                  className={`relative cursor-pointer z-10 inline-flex items-center ${
-                    index + 1 === page
-                      ? "bg-indigo-600 text-white"
-                      : "text-gray-400"
-                  }
+            {Array.from({ length: totalPages }).map((el, index) => (
+              <div
+                key={index}
+                onClick={(e) => handlePage(index + 1)}
+                aria-current="page"
+                className={`relative cursor-pointer z-10 inline-flex items-center ${
+                  index + 1 === page
+                    ? "bg-indigo-600 text-white"
+                    : "text-gray-400"
+                }
                   px-4 py-2 text-sm font-semibold  focus:z-20 focus-visible:outline 
                   focus-visible:outline-2 focus-visible:outline-offset-2
                    focus-visible:outline-indigo-600`}
-                >
-                  {index + 1}
-                </div>
-              )
-            )}
+              >
+                {index + 1}
+              </div>
+            ))}
 
             <div
-              onClick={(e) => handlePage(page<totalPages? page + 1:page)}
+              onClick={(e) => handlePage(page < totalPages ? page + 1 : page)}
               className="relative cursor-pointer inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Next</span>
@@ -602,13 +600,13 @@ function ProductGrid({ products }) {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-900">
-                      ${product.price}
-                    </p>
-                    <p className="text-sm font-medium text-gray-400">
                       Now: $
                       {Math.round(
                         product.price * (1 - product.discountPercentage / 100)
                       )}
+                    </p>
+                    <p className="text-sm font-medium text-gray-400 line-through">
+                      ${product.price}
                     </p>
                   </div>
                 </div>

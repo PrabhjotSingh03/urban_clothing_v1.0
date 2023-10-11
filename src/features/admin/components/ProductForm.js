@@ -2,11 +2,17 @@ import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { useSelector } from "react-redux";
 import {
   productCreateAsync,
+  productUpdateAsync,
   selectBrands,
 } from "../../product-list/productSlice";
 import { selectCategories } from "../../product-list/productSlice";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { fetchProductByIdAsync } from "../../product-list/productSlice";
+import { selectProductById } from "../../product-list/productSlice";
+import { selectedProductClear } from "../../product-list/productSlice";
 
 function ProductForm() {
   const brands = useSelector(selectBrands);
@@ -14,10 +20,38 @@ function ProductForm() {
   const {
     register,
     handleSubmit,
+    setValue,
     watch,
     formState: { errors },
+    reset,
   } = useForm();
   const dispatch = useDispatch();
+  const params = useParams();
+  const selectedProduct = useSelector(selectProductById);
+
+  useEffect(() => {
+    if (params.id) {
+      dispatch(fetchProductByIdAsync(params.id));
+    }else{
+      dispatch(selectedProductClear());
+    }
+  }, [dispatch, params.id]);
+
+  useEffect(() => {
+    if (selectedProduct && params.id) {
+      setValue("title", selectedProduct.title);
+      setValue("description", selectedProduct.description);
+      setValue("brand", selectedProduct.brand);
+      setValue("category", selectedProduct.category);
+      setValue("price", selectedProduct.price);
+      setValue("discountPercentage", selectedProduct.discountPercentage);
+      setValue("stock", selectedProduct.stock);
+      setValue("thumbnail", selectedProduct.thumbnail);
+      setValue("image1", selectedProduct.images[0]);
+      setValue("image2", selectedProduct.images[1]);
+      setValue("image3", selectedProduct.images[2]);
+    }
+  }, [setValue, selectedProduct, params.id]);
 
   return (
     <form
@@ -30,12 +64,21 @@ function ProductForm() {
           product.image2,
           product.image3,
         ];
-        product.rating = 0;
         delete product["image1"];
         delete product["image2"];
         delete product["image3"];
-        console.log(product);
-        dispatch(productCreateAsync(product));
+        product.price = +product.price;
+        product.discountPercentage = +product.discountPercentage;
+        product.stock = +product.stock;
+        if (params.id) {
+          product.id = params.id;
+          product.rating = selectedProduct.rating || 0;
+          dispatch(productUpdateAsync(product));
+          reset();
+        } else {
+          dispatch(productCreateAsync(product));
+          reset();
+        }
       })}
     >
       <div className="space-y-10 bg-white p-8">
@@ -75,6 +118,7 @@ function ProductForm() {
               </label>
               <div className="mt-2">
                 <textarea
+                  type="text"
                   id="description"
                   {...register("description", {
                     required: "Description is required",
@@ -233,7 +277,7 @@ function ProductForm() {
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                   <input
                     type="text"
-                    {...register("image", {
+                    {...register("image1", {
                       required: "Image is required",
                     })}
                     id="image1"

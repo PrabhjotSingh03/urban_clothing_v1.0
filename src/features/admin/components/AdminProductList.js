@@ -110,7 +110,6 @@ export default function AdminProductList() {
 
   return (
     <div>
-      
       <div>
         <div className="bg-white">
           <div>
@@ -209,10 +208,11 @@ export default function AdminProductList() {
 
                   {/* Product grid */}
                   <div className="lg:col-span-3">
-                    <div>
-                      <Link 
-                      to="/admin/productform"
-                      className="mx-10 my-4 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    <div className="col-span-full">
+                      <Link
+                        to="/admin/productform"
+                        className="text-center block w-full mx-2 my-4 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      >
                         Add New Products
                       </Link>
                     </div>
@@ -525,22 +525,25 @@ function ProductGrid({ products }) {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-gray-900">
-                        ${product.price}
-                      </p>
-                      <p className="text-sm font-medium text-gray-400">
                         Now: $
                         {Math.round(
                           product.price * (1 - product.discountPercentage / 100)
                         )}
                       </p>
+                      <p className="text-sm font-medium text-gray-400 line-through">
+                        ${product.price}
+                      </p>
                     </div>
                   </div>
                 </div>
               </Link>
-              <div>
-                <button className="my-4 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <div className="py-6 col-span-full">
+                <Link
+                  to={`/admin/productform/edit/${product.id}`}
+                  className="block my-4 w-full lg:w-full text-center rounded-md bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
                   Edit Product
-                </button>
+                </Link>
               </div>
             </div>
           ))}
