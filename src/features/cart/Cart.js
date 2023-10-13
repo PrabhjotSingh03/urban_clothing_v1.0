@@ -5,6 +5,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { selectItems, updateCartAsync, deleteItemAsync } from "../cart/cartSlice";
 import { Navigate } from "react-router-dom";
+import { discountedPrice } from "../../app/constants";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export default function Cart() {
   const items = useSelector(selectItems);
   const totalitems = items.reduce((total, item) => item.quantity + total, 0);
   const totalAmount = items.reduce(
-    (amount, item) => item.price * item.quantity + amount,
+    (amount, item) => discountedPrice(item) * item.quantity + amount,
     0
   );
   const handleQuantity = (e, item) => {
@@ -50,7 +51,7 @@ export default function Cart() {
                         <h3>
                           <a href={item.href}>{item.title}</a>
                         </h3>
-                        <p className="ml-4">${item.price}</p>
+                        <p className="ml-4">${discountedPrice(item)}</p>
                       </div>
                       <p className="flex flex-1 items-end justify-between text-sm text-gray-500">
                         {item.brand}

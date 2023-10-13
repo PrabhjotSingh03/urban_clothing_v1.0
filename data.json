@@ -2390,25 +2390,7 @@
       "id": 3
     }
   ],
-  "cart": [
-    {
-      "title": "Samsung Universe 9",
-      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
-      "discountPercentage": 15.46,
-      "rating": 4.09,
-      "stock": 36,
-      "brand": "Samsung",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/3/1.jpg"
-      ],
-      "quantity": 1,
-      "user": 1,
-      "id": 1
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "items": [
@@ -2506,7 +2488,7 @@
         "postalcode": "123456"
       },
       "paymentMethod": "card",
-      "status": "pending",
+      "status": "Shipped",
       "id": 1
     },
     {
@@ -2563,7 +2545,7 @@
         "postalcode": "123456"
       },
       "paymentMethod": "cash",
-      "status": "pending",
+      "status": "Delivered",
       "id": 2
     },
     {
@@ -2619,7 +2601,7 @@
         "postalcode": "123456"
       },
       "paymentMethod": "cash",
-      "status": "pending",
+      "status": "Processing",
       "id": 3
     },
     {
@@ -2675,8 +2657,680 @@
         "postalcode": "123456"
       },
       "paymentMethod": "card",
-      "status": "pending",
+      "status": "Cancelled",
       "id": 4
+    },
+    {
+      "items": [
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        },
+        {
+          "title": "Mornadi Velvet Bed",
+          "description": "Mornadi Velvet Bed Base with Headboard Slats Support Classic Style Bedroom Furniture Bed Set",
+          "price": 40,
+          "discountPercentage": 17,
+          "rating": 4.16,
+          "stock": 140,
+          "brand": "Furniture Bed Set",
+          "category": "furniture",
+          "thumbnail": "https://i.dummyjson.com/data/products/31/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/31/1.jpg",
+            "https://i.dummyjson.com/data/products/31/2.jpg",
+            "https://i.dummyjson.com/data/products/31/3.jpg",
+            "https://i.dummyjson.com/data/products/31/4.jpg",
+            "https://i.dummyjson.com/data/products/31/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 1089,
+      "totalitems": 2,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "Test-123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Test Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "100 Main ",
+            "city": "Toronto",
+            "state": "Ontario",
+            "postalcode": "123456"
+          },
+          {
+            "name": "Add Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "110 Main ",
+            "city": "Ajax",
+            "state": "Ontario",
+            "postalcode": "123456"
+          }
+        ],
+        "id": 1
+      },
+      "selectedAddress": {
+        "name": "Add Address Successful",
+        "email": "test@gmail.com",
+        "phone": "1234567890",
+        "country": "Canada",
+        "street": "110 Main ",
+        "city": "Ajax",
+        "state": "Ontario",
+        "postalcode": "123456"
+      },
+      "paymentMethod": "card",
+      "status": "pending",
+      "id": 5
+    },
+    {
+      "items": [
+        {
+          "title": "American Vintage Wood Pendant Light",
+          "description": "American Vintage Wood Pendant Light Farmhouse Antique Hanging Lamp Lampara Colgante",
+          "price": 46,
+          "discountPercentage": 8.84,
+          "rating": 4.32,
+          "stock": 138,
+          "brand": "Ifei Home",
+          "category": "lighting",
+          "thumbnail": "https://i.dummyjson.com/data/products/99/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/99/1.jpg",
+            "https://i.dummyjson.com/data/products/99/2.jpg",
+            "https://i.dummyjson.com/data/products/99/3.jpg",
+            "https://i.dummyjson.com/data/products/99/4.jpg",
+            "https://i.dummyjson.com/data/products/99/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 42,
+      "totalitems": 1,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "Test-123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Test Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "100 Main ",
+            "city": "Toronto",
+            "state": "Ontario",
+            "postalcode": "123456"
+          },
+          {
+            "name": "Add Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "110 Main ",
+            "city": "Ajax",
+            "state": "Ontario",
+            "postalcode": "123456"
+          }
+        ],
+        "id": 1
+      },
+      "selectedAddress": {
+        "name": "Test Address Successful",
+        "email": "test@gmail.com",
+        "phone": "1234567890",
+        "country": "Canada",
+        "street": "100 Main ",
+        "city": "Toronto",
+        "state": "Ontario",
+        "postalcode": "123456"
+      },
+      "paymentMethod": "cash",
+      "status": "pending",
+      "id": 6
+    },
+    {
+      "items": [
+        {
+          "title": "Bluetooth Aux",
+          "description": "Bluetooth Aux Bluetooth Car Aux Car Bluetooth Transmitter Aux Audio Receiver Handfree Car Bluetooth Music Receiver Universal 3.5mm Streaming A2DP Wireless Auto AUX Audio Adapter With Mic For Phone MP3",
+          "price": 25,
+          "discountPercentage": 10.56,
+          "rating": 4.57,
+          "stock": 22,
+          "brand": "Car Aux",
+          "category": "automotive",
+          "thumbnail": "https://i.dummyjson.com/data/products/86/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/86/1.jpg",
+            "https://i.dummyjson.com/data/products/86/2.webp",
+            "https://i.dummyjson.com/data/products/86/3.jpg",
+            "https://i.dummyjson.com/data/products/86/4.jpg",
+            "https://i.dummyjson.com/data/products/86/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        },
+        {
+          "title": "LouisWill Men Sunglasses",
+          "description": "LouisWill Men Sunglasses Polarized Sunglasses UV400 Sunglasses Day Night Dual Use Safety Driving Night Vision Eyewear AL-MG Frame Sun Glasses with Free Box for Drivers",
+          "price": 50,
+          "discountPercentage": 11.27,
+          "rating": 4.98,
+          "stock": 92,
+          "brand": "LouisWill",
+          "category": "sunglasses",
+          "thumbnail": "https://i.dummyjson.com/data/products/85/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/85/1.jpg",
+            "https://i.dummyjson.com/data/products/85/2.jpg",
+            "https://i.dummyjson.com/data/products/85/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 66,
+      "totalitems": 2,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "Test-123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Test Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "100 Main ",
+            "city": "Toronto",
+            "state": "Ontario",
+            "postalcode": "123456"
+          },
+          {
+            "name": "Add Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "110 Main ",
+            "city": "Ajax",
+            "state": "Ontario",
+            "postalcode": "123456"
+          }
+        ],
+        "id": 1
+      },
+      "selectedAddress": {
+        "name": "Add Address Successful",
+        "email": "test@gmail.com",
+        "phone": "1234567890",
+        "country": "Canada",
+        "street": "110 Main ",
+        "city": "Ajax",
+        "state": "Ontario",
+        "postalcode": "123456"
+      },
+      "paymentMethod": "card",
+      "status": "pending",
+      "id": 7
+    },
+    {
+      "items": [
+        {
+          "title": "women winter clothes",
+          "description": "women winter clothes thick fleece hoodie top with sweat pantjogger women sweatsuit set joggers pants two piece pants set",
+          "price": 57,
+          "discountPercentage": 13.39,
+          "rating": 4.91,
+          "stock": 84,
+          "brand": "Top Sweater",
+          "category": "tops",
+          "thumbnail": "https://i.dummyjson.com/data/products/40/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/40/1.jpg",
+            "https://i.dummyjson.com/data/products/40/2.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 49,
+      "totalitems": 1,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "Test-123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Test Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "100 Main ",
+            "city": "Toronto",
+            "state": "Ontario",
+            "postalcode": "123456"
+          },
+          {
+            "name": "Add Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "110 Main ",
+            "city": "Ajax",
+            "state": "Ontario",
+            "postalcode": "123456"
+          }
+        ],
+        "id": 1
+      },
+      "selectedAddress": {
+        "name": "Add Address Successful",
+        "email": "test@gmail.com",
+        "phone": "1234567890",
+        "country": "Canada",
+        "street": "110 Main ",
+        "city": "Ajax",
+        "state": "Ontario",
+        "postalcode": "123456"
+      },
+      "paymentMethod": "cash",
+      "status": "pending",
+      "id": 8
+    },
+    {
+      "items": [
+        {
+          "title": "Tree Oil 30ml",
+          "description": "Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria,",
+          "price": 12,
+          "discountPercentage": 4.09,
+          "rating": 4.52,
+          "stock": 78,
+          "brand": "Hemani Tea",
+          "category": "skincare",
+          "thumbnail": "https://i.dummyjson.com/data/products/17/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/17/1.jpg",
+            "https://i.dummyjson.com/data/products/17/2.jpg",
+            "https://i.dummyjson.com/data/products/17/3.jpg",
+            "https://i.dummyjson.com/data/products/17/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 12,
+      "totalitems": 1,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "Test-123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Test Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "100 Main ",
+            "city": "Toronto",
+            "state": "Ontario",
+            "postalcode": "123456"
+          },
+          {
+            "name": "Add Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "110 Main ",
+            "city": "Ajax",
+            "state": "Ontario",
+            "postalcode": "123456"
+          }
+        ],
+        "id": 1
+      },
+      "selectedAddress": {
+        "name": "Test Address Successful",
+        "email": "test@gmail.com",
+        "phone": "1234567890",
+        "country": "Canada",
+        "street": "100 Main ",
+        "city": "Toronto",
+        "state": "Ontario",
+        "postalcode": "123456"
+      },
+      "paymentMethod": "cash",
+      "status": "pending",
+      "id": 9
+    },
+    {
+      "items": [
+        {
+          "title": "Black Motorbike",
+          "description": "Engine Type:Wet sump, Single Cylinder, Four Stroke, Two Valves, Air Cooled with SOHC (Single Over Head Cam) Chain Drive Bore & Stroke:47.0 x 49.5 MM",
+          "price": 569,
+          "discountPercentage": 13.63,
+          "rating": 4.04,
+          "stock": 115,
+          "brand": "METRO 70cc Motorcycle - MR70",
+          "category": "motorcycle",
+          "thumbnail": "https://i.dummyjson.com/data/products/91/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/91/1.jpg",
+            "https://i.dummyjson.com/data/products/91/2.jpg",
+            "https://i.dummyjson.com/data/products/91/3.jpg",
+            "https://i.dummyjson.com/data/products/91/4.jpg",
+            "https://i.dummyjson.com/data/products/91/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        },
+        {
+          "title": "Samsung Galaxy Book",
+          "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
+          "price": 1499,
+          "discountPercentage": 4.15,
+          "rating": 4.25,
+          "stock": 50,
+          "brand": "Samsung",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/7/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/7/1.jpg",
+            "https://i.dummyjson.com/data/products/7/2.jpg",
+            "https://i.dummyjson.com/data/products/7/3.jpg",
+            "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        },
+        {
+          "title": "half sleeves T shirts",
+          "description": "Many store is creating new designs and trend every month and every year. Daraz.pk have a beautiful range of men fashion brands",
+          "price": 23,
+          "discountPercentage": 12.76,
+          "rating": 4.26,
+          "stock": 132,
+          "brand": "Vintage Apparel",
+          "category": "mens-shirts",
+          "thumbnail": "https://i.dummyjson.com/data/products/51/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/51/1.png",
+            "https://i.dummyjson.com/data/products/51/2.jpg",
+            "https://i.dummyjson.com/data/products/51/3.jpg",
+            "https://i.dummyjson.com/data/products/51/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 3
+        },
+        {
+          "title": "Cycle Bike Glow",
+          "description": "Universal fitment and easy to install no special wires, can be easily installed and removed. Fits most standard tyre air stem valves of road, mountain bicycles, motocycles and cars.Bright led will turn on w",
+          "price": 35,
+          "discountPercentage": 11.08,
+          "rating": 4.1,
+          "stock": 63,
+          "brand": "Neon LED Light",
+          "category": "automotive",
+          "thumbnail": "https://i.dummyjson.com/data/products/90/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/90/1.jpg",
+            "https://i.dummyjson.com/data/products/90/2.jpg",
+            "https://i.dummyjson.com/data/products/90/3.jpg",
+            "https://i.dummyjson.com/data/products/90/4.jpg",
+            "https://i.dummyjson.com/data/products/90/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 4
+        },
+        {
+          "title": "Waterproof Leather Brand Watch",
+          "description": "Watch Crown With Environmental IPS Bronze Electroplating; Display system of 12 hours",
+          "price": 46,
+          "discountPercentage": 3.15,
+          "rating": 4.05,
+          "stock": 95,
+          "brand": "SKMEI 9117",
+          "category": "mens-watches",
+          "thumbnail": "https://i.dummyjson.com/data/products/62/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/62/1.jpg",
+            "https://i.dummyjson.com/data/products/62/2.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 5
+        }
+      ],
+      "totalAmount": 2024,
+      "totalitems": 5,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "Test-123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Test Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "100 Main ",
+            "city": "Toronto",
+            "state": "Ontario",
+            "postalcode": "123456"
+          },
+          {
+            "name": "Add Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "110 Main ",
+            "city": "Ajax",
+            "state": "Ontario",
+            "postalcode": "123456"
+          }
+        ],
+        "id": 1
+      },
+      "selectedAddress": {
+        "name": "Add Address Successful",
+        "email": "test@gmail.com",
+        "phone": "1234567890",
+        "country": "Canada",
+        "street": "110 Main ",
+        "city": "Ajax",
+        "state": "Ontario",
+        "postalcode": "123456"
+      },
+      "paymentMethod": "cash",
+      "status": "pending",
+      "id": 10
+    },
+    {
+      "items": [
+        {
+          "title": "Cycle Bike Glow",
+          "description": "Universal fitment and easy to install no special wires, can be easily installed and removed. Fits most standard tyre air stem valves of road, mountain bicycles, motocycles and cars.Bright led will turn on w",
+          "price": 35,
+          "discountPercentage": 11.08,
+          "rating": 4.1,
+          "stock": 63,
+          "brand": "Neon LED Light",
+          "category": "automotive",
+          "thumbnail": "https://i.dummyjson.com/data/products/90/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/90/1.jpg",
+            "https://i.dummyjson.com/data/products/90/2.jpg",
+            "https://i.dummyjson.com/data/products/90/3.jpg",
+            "https://i.dummyjson.com/data/products/90/4.jpg",
+            "https://i.dummyjson.com/data/products/90/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 4
+        },
+        {
+          "title": "Waterproof Leather Brand Watch",
+          "description": "Watch Crown With Environmental IPS Bronze Electroplating; Display system of 12 hours",
+          "price": 46,
+          "discountPercentage": 3.15,
+          "rating": 4.05,
+          "stock": 95,
+          "brand": "SKMEI 9117",
+          "category": "mens-watches",
+          "thumbnail": "https://i.dummyjson.com/data/products/62/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/62/1.jpg",
+            "https://i.dummyjson.com/data/products/62/2.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 5
+        }
+      ],
+      "totalAmount": 76,
+      "totalitems": 2,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "Test-123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Test Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "100 Main ",
+            "city": "Toronto",
+            "state": "Ontario",
+            "postalcode": "123456"
+          },
+          {
+            "name": "Add Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "110 Main ",
+            "city": "Ajax",
+            "state": "Ontario",
+            "postalcode": "123456"
+          }
+        ],
+        "id": 1
+      },
+      "selectedAddress": {
+        "name": "Test Address Successful",
+        "email": "test@gmail.com",
+        "phone": "1234567890",
+        "country": "Canada",
+        "street": "100 Main ",
+        "city": "Toronto",
+        "state": "Ontario",
+        "postalcode": "123456"
+      },
+      "paymentMethod": "cash",
+      "status": "pending",
+      "id": 11
+    },
+    {
+      "items": [
+        {
+          "title": "Stylish Casual Jeans Shoes",
+          "description": "High Quality ,Stylish design ,Comfortable wear ,FAshion ,Durable",
+          "price": 58,
+          "discountPercentage": 7.55,
+          "rating": 4.55,
+          "stock": 129,
+          "brand": "Sneakers",
+          "category": "mens-shoes",
+          "thumbnail": "https://i.dummyjson.com/data/products/60/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/60/1.jpg",
+            "https://i.dummyjson.com/data/products/60/2.jpg",
+            "https://i.dummyjson.com/data/products/60/3.jpg",
+            "https://i.dummyjson.com/data/products/60/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 54,
+      "totalitems": 1,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "Test-123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Test Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "100 Main ",
+            "city": "Toronto",
+            "state": "Ontario",
+            "postalcode": "123456"
+          },
+          {
+            "name": "Add Address Successful",
+            "email": "test@gmail.com",
+            "phone": "1234567890",
+            "country": "Canada",
+            "street": "110 Main ",
+            "city": "Ajax",
+            "state": "Ontario",
+            "postalcode": "123456"
+          }
+        ],
+        "id": 1
+      },
+      "selectedAddress": {
+        "name": "Test Address Successful",
+        "email": "test@gmail.com",
+        "phone": "1234567890",
+        "country": "Canada",
+        "street": "100 Main ",
+        "city": "Toronto",
+        "state": "Ontario",
+        "postalcode": "123456"
+      },
+      "paymentMethod": "card",
+      "status": "pending",
+      "id": 12
     }
   ]
 }
