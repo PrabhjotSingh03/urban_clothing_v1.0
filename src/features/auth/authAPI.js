@@ -1,43 +1,54 @@
 import { isRejected } from "@reduxjs/toolkit";
 
 export function createUser(userData) {
-  return new Promise( async (resolve) =>{
-    const response = await fetch('http://localhost:8000/users',{
-      method: 'POST',
+  return new Promise(async (resolve) => {
+    const response = await fetch("http://localhost:8000/auth/signup", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(userData)
-    })
+      body: JSON.stringify(userData),
+    });
     const data = await response.json();
-    resolve({data})
-  }
-  );
+    resolve({ data });
+  });
 }
 
 export function checkUser(loginInfo) {
-  return new Promise( async (resolve,reject) =>{
-    const email = loginInfo.email;
-    const password = loginInfo.password;
-    const response = await fetch('http://localhost:8000/users?email='+email);
-    const data = await response.json();
-    console.log({data});
-    if(data.length){
-      if(password===data[0].password){
-        resolve({data:data[0]})
-      }else{
-        reject({message:'User not found'})
+  return new Promise(async (resolve, reject) => {
+    try {
+      const response = await fetch("http://localhost:8000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginInfo),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        resolve({ data });
+      } else {
+        const error = await response.json();
+        reject(error);
       }
-    }else{
-      reject({message:'User not found'})
+    } catch (error) {
+      reject(error);
     }
-  }
-  );
+    // console.log({data});
+    // if(data.length){
+    //   if(password===data[0].password){
+    //     resolve({data:data[0]})
+    //   }else{
+    //     reject({message:'User not found'})
+    //   }
+    // }else{
+    //   reject({message:'User not found'})
+    // }
+  });
 }
 
 export function signOut(userId) {
-  return new Promise( async (resolve) =>{
-    resolve({data: "successfully signed out"})
-  }
-  );
+  return new Promise(async (resolve) => {
+    resolve({ data: "successfully signed out" });
+  });
 }
