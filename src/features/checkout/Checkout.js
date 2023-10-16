@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import {
   selectItems,
   updateCartAsync,
-  deleteItemAsync,
+  deleteProductFromCartAsync,
 } from "../cart/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState, Fragment } from "react";
@@ -29,7 +29,7 @@ function Checkout() {
   };
 
   const handleRemove = (e, id) => {
-    dispatch(deleteItemAsync(id));
+    dispatch(deleteProductFromCartAsync(id));
   };
 
   const {

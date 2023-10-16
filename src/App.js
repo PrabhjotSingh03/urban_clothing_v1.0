@@ -21,7 +21,7 @@ import {
   Link,
 } from "react-router-dom";
 import Protected from "./features/auth/components/Protected";
-import { fetchItemsByUserIdAsync } from "./features/cart/cartSlice";
+import { fetchProductsByUserIdAsync } from "./features/cart/cartSlice";
 import PageNotFound from "./pages/404";
 import UserOrdersPage from "./pages/UserOrderPage";
 import UserProfilePage from "./pages/UserProfilePage";
@@ -113,7 +113,7 @@ function App() {
 
   useEffect(() => {
     if(user){
-      dispatch(fetchItemsByUserIdAsync(user.id));
+      dispatch(fetchProductsByUserIdAsync(user.id));
       dispatch(fetchLoggedInUserAsync(user.id));
     }
   },[dispatch, user]);

@@ -16,6 +16,8 @@ export function createUser(userData) {
 
 export function checkUser(loginInfo) {
   return new Promise(async (resolve, reject) => {
+    // const email = loginInfo.email;
+    // const password = loginInfo.password;
     try {
       const response = await fetch("http://localhost:8000/auth/login", {
         method: "POST",
@@ -34,6 +36,7 @@ export function checkUser(loginInfo) {
     } catch (error) {
       reject(error);
     }
+    // const data = await response.json();
     // console.log({data});
     // if(data.length){
     //   if(password===data[0].password){

@@ -9,7 +9,7 @@ export function fetchAllProducts() {
 
 export function fetchProductById(id) {
   return new Promise(async(resolve) =>{
-    const response = await fetch('http://localhost:8000/products/'+id);
+    const response = await fetch('http://localhost:8000/products/' + id);
     const data = await response.json();
     resolve({data});
   }
@@ -36,7 +36,7 @@ export function fetchProductsByFilters(filter,sort,pagination) {
 
 
   return new Promise(async(resolve) =>{
-    const response = await fetch('http://localhost:8000/products?'+queryString);
+    const response = await fetch('http://localhost:8000/products?' + queryString);
     const data = await response.json();
     const totalItems = await response.headers.get('X-Total-Count');
     resolve({data:{products:data,totalItems:+totalItems}});

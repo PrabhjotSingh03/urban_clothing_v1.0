@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { selectItems, updateCartAsync, deleteItemAsync } from "../cart/cartSlice";
+import { selectItems, updateCartAsync, deleteProductFromCartAsync } from "../cart/cartSlice";
 import { Navigate } from "react-router-dom";
 import { discountedPrice } from "../../app/constants";
 
@@ -22,7 +22,7 @@ export default function Cart() {
   };
 
   const handleRemove = (e, id) => {
-    dispatch(deleteItemAsync(id));
+    dispatch(deleteProductFromCartAsync(id));
   };
 
   return (
