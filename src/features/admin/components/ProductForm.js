@@ -92,7 +92,13 @@ function ProductForm() {
           <h2 className="text-base font-semibold leading-7 text-gray-900">
             Add Product
           </h2>
-
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+              {selectedProduct && selectedProduct.deleted && (
+                <h2 className="text-red-500 sm:col-span-6">
+                  This product is deleted
+                </h2>
+              )}
+              </div>
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 pb-12">
             <div className="col-span-full">
               <label
@@ -337,7 +343,7 @@ function ProductForm() {
           </div>
         </div>
 
-        <div className="border-b border-gray-900/10 pb-12">
+        {/* <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
             Extras
           </h2>
@@ -414,7 +420,7 @@ function ProductForm() {
               </div>
             </fieldset>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">

@@ -1,12 +1,3 @@
-export function fetchAllProducts() {
-  return new Promise(async(resolve) =>{
-    const response = await fetch('http://localhost:8000/products');
-    const data = await response.json();
-    resolve({data});
-  }
-  );
-}
-
 export function fetchProductById(id) {
   return new Promise(async(resolve) =>{
     const response = await fetch('http://localhost:8000/products/' + id);
@@ -16,7 +7,7 @@ export function fetchProductById(id) {
   );
 }
 
-export function fetchProductsByFilters(filter,sort,pagination) {
+export function fetchProductsByFilters(filter, sort, pagination, admin) {
   let queryString = '';
   for(let key in filter){
     const categoryValues = filter[key];
@@ -24,6 +15,10 @@ export function fetchProductsByFilters(filter,sort,pagination) {
       const lastCategoryValue = categoryValues[categoryValues.length-1];
       queryString += `${key}=${lastCategoryValue}&`
     }
+  }
+
+  if(admin){
+    queryString += `admin=true`;
   }
 
   for(let key in sort){
