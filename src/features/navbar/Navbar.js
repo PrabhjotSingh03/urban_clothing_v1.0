@@ -37,11 +37,11 @@ function NavBar({ children }) {
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <Link to="/">
-                        <img
-                          className="h-8 w-8"
-                          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                          alt="Urban Clothing Logo"
-                        />
+                      <img
+                className="mx-auto h-10 w-10"
+                src="./urbanClothingLogo.png"
+                alt="Urban Clothing Logo"
+              />
                       </Link>
                     </div>
                     <div className="hidden md:block">
