@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useState, Fragment } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { selectLoggedInUser, updateUserAsync } from "../auth/authSlice";
+import { updateUserAsync } from "../user/userSlice";
 import { createOrderAsync } from "../order/orderSlice";
 import { selectOrderCurrent } from "../order/orderSlice";
 import { selectUserInfo } from "../user/userSlice";
@@ -63,7 +63,7 @@ function Checkout() {
         items,
         totalAmount,
         totalitems,
-        user,
+        user:user.id,
         selectedAddress,
         paymentMethod,
         status: "pending",

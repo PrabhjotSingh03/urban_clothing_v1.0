@@ -10,10 +10,10 @@ import { useForm } from "react-hook-form";
 
 export default function ProfileUser() {
   const dispatch = useDispatch();
-  const user = useSelector(selectUserInfo);
+  const userInfo = useSelector(selectUserInfo);
 
   const editHandle = (updateAddress, index) => {
-    const newUser = { ...user, addresses: [...user.addresses] };
+    const newUser = { ...userInfo, addresses: [...userInfo.addresses] };
     newUser.addresses.splice(index, 1, updateAddress);
     dispatch(updateUserAsync(newUser));
     setEditSelectedIndex(-1);
@@ -24,7 +24,7 @@ export default function ProfileUser() {
 
   const editHandleForm = (index) => {
     setEditSelectedIndex(index);
-    const address = user.addresses[index];
+    const address = userInfo.addresses[index];
     setValue("name", address.name);
     setValue("email", address.email);
     setValue("phone", address.phone);
@@ -36,7 +36,7 @@ export default function ProfileUser() {
   };
 
   const removeHandle = (e, index) => {
-    const newUser = { ...user, addresses: [...user.addresses] };
+    const newUser = { ...userInfo, addresses: [...userInfo.addresses] };
     newUser.addresses.splice(index, 1);
     dispatch(updateUserAsync(newUser));
   };
@@ -51,7 +51,7 @@ export default function ProfileUser() {
   } = useForm();
 
   const addHandle = (address) => {
-    const newUser = { ...user, addresses: [...user.addresses, address] };
+    const newUser = { ...userInfo, addresses: [...userInfo.addresses, address] };
     dispatch(updateUserAsync(newUser));
     setAddAddressFormShow(false);
   };
@@ -61,13 +61,13 @@ export default function ProfileUser() {
       <div className="mx-auto bg-white max-w-2xl px-4 sm:px-6 lg:px-8">
         <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
           <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-            Name: {user.name ? user.name : "Guest"}
+            Name: {userInfo.name ? userInfo.name : "User"}
           </h1>
           <h2 className="text-1xl font-bold tracking-tight text-red-900">
-            Email: {user.email}
+            Email: {userInfo.email}
           </h2>
-          {user.role === "admin" && <h2 className="text-1xl font-bold tracking-tight text-red-900">
-            Role: {user.role}
+          {userInfo.role === "admin" && <h2 className="text-1xl font-bold tracking-tight text-red-900">
+            Role: {userInfo.role}
           </h2>}
         </div>
 
@@ -273,8 +273,8 @@ export default function ProfileUser() {
 
           {/* All Address */}
           <p className="mt-0.5 text-sm text-gray-500">All Address:</p>
-          {user.addresses.map((address, index) => (
-            <div>
+          {userInfo.addresses.map((address, index) => (
+            <div key={index}>
               {editSelectedIndex === index ? (
                 <form
                   className="bg-white px-5"
