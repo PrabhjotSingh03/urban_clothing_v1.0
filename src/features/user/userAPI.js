@@ -1,6 +1,6 @@
 export function fetchUserOrders(userid) {
   return new Promise( async (resolve) =>{
-    const response = await fetch('http://localhost:8000/orders/?user='+userid)
+    const response = await fetch('http://localhost:8000/orders/user/'+userid)
     const data = await response.json()
     resolve({data})
   }

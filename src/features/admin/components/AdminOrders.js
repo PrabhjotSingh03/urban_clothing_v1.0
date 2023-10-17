@@ -69,7 +69,7 @@ function AdminOrders() {
 
   return (
     <div className="overflow-x-auto">
-      <div className="bg-gray-100 flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
+      <div className=" flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
         <div className="w-full">
           <div className="bg-white shadow-md rounded my-6">
             <table className="min-w-max w-full table-auto">
@@ -119,7 +119,7 @@ function AdminOrders() {
               </thead>
               <tbody className="text-gray-600 text-sm font-light">
                 {orders.map((order) => (
-                  <tr className="border-b border-gray-200 hover:bg-gray-100">
+                  <tr key={order.id} className="border-b border-gray-200 hover:bg-gray-100">
                     <td className="py-3 px-1 text-center">
                       <div className="items-center">
                         <span className="font-medium">{order.id}</span>
@@ -131,11 +131,12 @@ function AdminOrders() {
                           <div className="mr-2">
                             <img
                               className="w-6 h-6 rounded-full"
-                              src={item.thumbnail}
+                              src={item.product.thumbnail}
+                              alt={item.product.title}
                             />
                           </div>
                           <span>
-                            {item.title} - ${discountedPrice(item)} - #
+                            {item.product.title} - ${discountedPrice(item.product)} - #
                             {item.quantity}
                           </span>
                         </div>
