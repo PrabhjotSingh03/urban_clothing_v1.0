@@ -8,14 +8,14 @@ import { discountedPrice } from "../../../app/constants";
 
 export default function UserOrders() {
   const dispatch = useDispatch();
-  const userInfo = useSelector(selectUserInfo);
   const orders = useSelector(selectOrdersOfUser);
+
   useEffect(() => {
-    dispatch(fetchUserOrdersAsync(userInfo.id));
-  }, [dispatch, userInfo.id]);
+    dispatch(fetchUserOrdersAsync());
+  }, [dispatch]);
   return (
     <div>
-      {orders.map((order, index) => (
+      {orders && orders.map((order, index) => (
         <div key={index}>
           <div className="mx-auto bg-white max-w-2xl px-4 sm:px-6 lg:px-8">
             <div className="border-t border-gray-200 px-4 py-6 sm:px-6">

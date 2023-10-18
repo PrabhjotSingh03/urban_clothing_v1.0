@@ -12,9 +12,9 @@ export function addProductToCart(item) {
   });
 }
 
-export function fetchProductsByUserId(userId) {
+export function fetchProductsByUserId() {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:8000/cart?user=" + userId);
+    const response = await fetch("http://localhost:8000/cart");
     const data = await response.json();
     resolve({ data });
   });
@@ -47,9 +47,9 @@ export function deleteProductFromCart(itemId) {
   });
 }
 
-export function cartReset(userId) {
+export function cartReset() {
   return new Promise(async (resolve) => {
-    const response = await fetchProductsByUserId(userId);
+    const response = await fetchProductsByUserId();
     const items = response.data;
     for (let item of items) {
       await deleteProductFromCart(item.id);

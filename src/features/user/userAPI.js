@@ -1,6 +1,6 @@
-export function fetchUserOrders(userid) {
+export function fetchUserOrders() {
   return new Promise( async (resolve) =>{
-    const response = await fetch('http://localhost:8000/orders/user/'+userid)
+    const response = await fetch('http://localhost:8000/orders/uid/')
     const data = await response.json()
     resolve({data})
   }
@@ -22,9 +22,9 @@ export function updateUser(update) {
   );
 }
 
-export function fetchLoggedInUser(userid) {
+export function fetchLoggedInUser() {
   return new Promise( async (resolve) =>{
-    const response = await fetch('http://localhost:8000/users/'+userid)
+    const response = await fetch('http://localhost:8000/users/uid');
     const data = await response.json()
     resolve({data})
   }
