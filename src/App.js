@@ -10,10 +10,9 @@ import Checkout from "./pages/Checkout";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { selectLoggedInUser } from "./features/auth/authSlice";
+import { checkAuthAsync, selectLoggedInUser, selectUserChecked } from "./features/auth/authSlice";
 import OrderSuccess from "./pages/OrderSuccess";
 import UserOrders from "./features/user/components/UserOrders";
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -110,6 +109,11 @@ function App() {
 
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
+  const userChecked = useSelector(selectUserChecked);
+
+  useEffect(() => {
+    dispatch(checkAuthAsync());
+  },[dispatch]);
 
   useEffect(() => {
     if(user){
@@ -121,7 +125,7 @@ function App() {
 
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      { userChecked && <RouterProvider router={router} />}
     </div>
   );
 }

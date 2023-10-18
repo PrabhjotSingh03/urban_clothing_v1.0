@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { selectItems, updateCartAsync, deleteProductFromCartAsync } from "../cart/cartSlice";
+import { selectItems, updateCartAsync, deleteProductFromCartAsync, selectCartLoaded } from "../cart/cartSlice";
 import { Navigate } from "react-router-dom";
 import { discountedPrice } from "../../app/constants";
 
@@ -20,6 +20,7 @@ export default function Cart() {
     dispatch(updateCartAsync({ id:item.id, quantity: +e.target.value }));
     console.log(e.target.value);
   };
+  const cartLoaded = useSelector(selectCartLoaded);
 
   const handleRemove = (e, id) => {
     dispatch(deleteProductFromCartAsync(id));
@@ -27,7 +28,7 @@ export default function Cart() {
 
   return (
     <>
-    {!items.length && <Navigate to="/" replace={true}></Navigate>}
+    {!items.length && cartLoaded && <Navigate to="/" replace={true}></Navigate>}
       <div className="mx-auto bg-white max-w-2xl px-4 sm:px-6 lg:px-8">
         <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
           <h1 className="text-2xl font-bold tracking-tight text-gray-900">
