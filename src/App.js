@@ -32,11 +32,12 @@ import ProtectedAdmin from "./features/auth/components/ProtectedAdmin";
 import AdminProductDetailPage from "./pages/AdminProductDetailPage";
 import AdminProductFormPage from "./pages/AdminProductFormPage";
 import AdminOrdersPage from "./pages/AdminOrdersPage";
+import CheckoutStripe from "./pages/CheckoutStripe";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Protected><Home></Home></Protected>,
+    element: (<Protected><Home></Home></Protected>),
   },
   {
     path: "/login",
@@ -48,11 +49,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <Protected><CartPage></CartPage></Protected>,
+    element: (<Protected><CartPage></CartPage></Protected>),
   },
   {
     path: "/checkout",
-    element: <Protected><Checkout></Checkout></Protected>,
+    element: (<Protected><Checkout></Checkout></Protected>),
   },
   {
     path: "/productdetail/:id",
@@ -64,15 +65,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/ordersuccess/:id",
-    element: <Protected><OrderSuccess></OrderSuccess></Protected>,
+    element: (<Protected><OrderSuccess></OrderSuccess></Protected>),
   },
   {
     path: "/orders",
-    element: <Protected><UserOrdersPage></UserOrdersPage></Protected>,
+    element: (<Protected><UserOrdersPage></UserOrdersPage></Protected>),
   },
   {
     path: "/profile",
-    element: <Protected><UserProfilePage></UserProfilePage></Protected>,
+    element: (<Protected><UserProfilePage></UserProfilePage></Protected>),
   },
   {
     path: "/logout",
@@ -80,28 +81,32 @@ const router = createBrowserRouter([
   },
   {
     path: "/forgotpassword",
-    element: <ForgotPasswordPage></ForgotPasswordPage>,
+    element: (<ForgotPasswordPage></ForgotPasswordPage>),
+  },
+  {
+    path: "/checkout_stripe/",
+    element: (<Protected><CheckoutStripe></CheckoutStripe></Protected>),
   },
   // admin
   {
     path: "/admin",
-    element: <ProtectedAdmin><AdminHome></AdminHome></ProtectedAdmin>,
+    element: (<ProtectedAdmin><AdminHome></AdminHome></ProtectedAdmin>),
   },
   {
     path: "/admin/productdetail/:id",
-    element: <ProtectedAdmin><AdminProductDetailPage></AdminProductDetailPage></ProtectedAdmin>,
+    element: (<ProtectedAdmin><AdminProductDetailPage></AdminProductDetailPage></ProtectedAdmin>),
   },
   {
     path: "/admin/productform",
-    element: <ProtectedAdmin><AdminProductFormPage></AdminProductFormPage></ProtectedAdmin>,
+    element: (<ProtectedAdmin><AdminProductFormPage></AdminProductFormPage></ProtectedAdmin>),
   },
   {
     path: "/admin/productform/edit/:id",
-    element: <ProtectedAdmin><AdminProductFormPage></AdminProductFormPage></ProtectedAdmin>,
+    element: (<ProtectedAdmin><AdminProductFormPage></AdminProductFormPage></ProtectedAdmin>),
   },
   {
     path: "/admin/orders",
-    element: <ProtectedAdmin><AdminOrdersPage></AdminOrdersPage></ProtectedAdmin>,
+    element: (<ProtectedAdmin><AdminOrdersPage></AdminOrdersPage></ProtectedAdmin>),
   },
 ]);
 

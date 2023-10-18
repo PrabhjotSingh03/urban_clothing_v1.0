@@ -39,7 +39,7 @@ function NavBar({ children }) {
                       <Link to="/">
                         <img
                           className="mx-auto h-10 w-10"
-                          src="./urbanClothingLogo.png"
+                          src="../urbanClothingLogo.png"
                           alt="Urban Clothing Logo"
                         />
                       </Link>
@@ -94,7 +94,7 @@ function NavBar({ children }) {
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
-                              src="./profile.png"
+                              src="../profile.png"
                               alt=""
                             />
                           </Menu.Button>

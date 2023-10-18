@@ -76,9 +76,15 @@ function Checkout() {
     return (
       <>
         {!items.length && <Navigate to="/" replace={true}></Navigate>}
-        {orderCurrent && (
+        {orderCurrent && orderCurrent.paymentMethod === "cash" && (
           <Navigate
             to={`/ordersuccess/${orderCurrent.id}`}
+            replace={true}
+          ></Navigate>
+        )}
+        {orderCurrent && orderCurrent.paymentMethod === "card" && (
+          <Navigate
+            to={`/checkout_stripe/`}
             replace={true}
           ></Navigate>
         )}
