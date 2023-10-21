@@ -27,8 +27,13 @@ function AdminOrders() {
   const editHandle = (order) => {
     setEditableOrderId(order.id);
   };
-  const updateHandle = (e, order) => {
+  const orderStatusHandle = (e, order) => {
     const orderUpdated = { ...order, status: e.target.value };
+    dispatch(orderUpdateAsync(orderUpdated));
+    setEditableOrderId(-1);
+  };
+  const paymentStatusHandle = (e, order) => {
+    const orderUpdated = { ...order, statusPayment: e.target.value };
     dispatch(orderUpdateAsync(orderUpdated));
     setEditableOrderId(-1);
   };
@@ -57,6 +62,8 @@ function AdminOrders() {
         return "bg-purple-200 text-purple-800";
       case "Delivered":
         return "bg-green-200 text-green-800";
+      case "Received":
+        return "bg-green-200 text-green-800";
       default:
         return "bg-grey-200 text-grey-800";
     }
@@ -72,7 +79,7 @@ function AdminOrders() {
       <div className=" flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
         <div className="w-full">
           <div className="bg-white shadow-md rounded my-6">
-            <table className="min-w-max w-full table-auto">
+            <table className="w-full table-auto">
               <thead>
                 <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                   <th
@@ -84,7 +91,7 @@ function AdminOrders() {
                       })
                     }
                   >
-                    Order {' '}
+                    Order{" "}
                     {sort._sort === "id" &&
                       (sort._order === "asc" ? (
                         <ArrowUpIcon className="w-4 h-4 inline"></ArrowUpIcon>
@@ -104,7 +111,7 @@ function AdminOrders() {
                       })
                     }
                   >
-                    Total Amount {' '}
+                    Total Amount{" "}
                     {sort._sort === "totalAmount" &&
                       (sort._order === "asc" ? (
                         <ArrowUpIcon className="w-4 h-4 inline"></ArrowUpIcon>
@@ -113,13 +120,18 @@ function AdminOrders() {
                       ))}
                   </th>
                   <th className="py-3 px-1 text-center">Shipping Address</th>
-                  <th className="py-3 px-1 text-center">Status</th>
+                  <th className="py-3 px-1 text-center">Order Status</th>
+                  <th className="py-3 px-1 text-center">Payment Method</th>
+                  <th className="py-3 px-1 text-center">Payments Status</th>
                   <th className="py-3 px-1 text-center">Actions</th>
                 </tr>
               </thead>
               <tbody className="text-gray-600 text-sm font-light">
                 {orders.map((order) => (
-                  <tr key={order.id} className="border-b border-gray-200 hover:bg-gray-100">
+                  <tr
+                    key={order.id}
+                    className="border-b border-gray-200 hover:bg-gray-100"
+                  >
                     <td className="py-3 px-1 text-center">
                       <div className="items-center">
                         <span className="font-medium">{order.id}</span>
@@ -136,8 +148,8 @@ function AdminOrders() {
                             />
                           </div>
                           <span>
-                            {item.product.title} - ${discountedPrice(item.product)} - #
-                            {item.quantity}
+                            {item.product.title} - $
+                            {discountedPrice(item.product)} - #{item.quantity}
                           </span>
                         </div>
                       ))}
@@ -165,7 +177,7 @@ function AdminOrders() {
                     </td>
                     <td className="py-3 px-1 text-center">
                       {order.id === editableOrderId ? (
-                        <select onChange={(e) => updateHandle(e, order)}>
+                        <select onChange={(e) => orderStatusHandle(e, order)}>
                           <option value="Pending">Pending</option>
                           <option value="Cancelled">Cancelled</option>
                           <option value="Processing">Processing</option>
@@ -179,6 +191,28 @@ function AdminOrders() {
                           )} py-1 px-3 rounded-full text-xs`}
                         >
                           {order.status}
+                        </span>
+                      )}
+                    </td>
+                    <td className="py-3 px-1 text-center">
+                      <div className="flex items-center justify-center">
+                        {order.paymentMethod}
+                      </div>
+                    </td>
+                    <td className="py-3 px-1 text-center">
+                      {order.id === editableOrderId ? (
+                        <select onChange={(e) => paymentStatusHandle(e, order)}>
+                          <option value="Pending">Pending</option>
+                          <option value="Processing">Processing</option>
+                          <option value="Received">Received</option>
+                        </select>
+                      ) : (
+                        <span
+                          className={`${chooseColor(
+                            order.status
+                          )} py-1 px-3 rounded-full text-xs`}
+                        >
+                          {order.statusPayment}
                         </span>
                       )}
                     </td>
