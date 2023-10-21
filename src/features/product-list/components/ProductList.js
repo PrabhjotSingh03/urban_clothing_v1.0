@@ -31,7 +31,6 @@ import { discountedPrice } from "../../../app/constants";
 import Pagination from "../../common/Pagination";
 
 const sortOptions = [
-  { name: "Best Rating", sort: "rating", current: false },
   { name: "Price: Low to High", sort: "price", order: "asc", current: false },
   { name: "Price: High to Low", sort: "price", order: "desc", current: false },
 ];
@@ -259,13 +258,6 @@ export default function ProductList() {
                     </Transition>
                   </Menu>
 
-                  <button
-                    type="button"
-                    className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
-                  >
-                    <span className="sr-only">View grid</span>
-                    <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
-                  </button>
                   <button
                     type="button"
                     className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"

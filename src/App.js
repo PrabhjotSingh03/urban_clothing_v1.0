@@ -1,7 +1,5 @@
 import React from "react";
 import "./App.css";
-import logo from "./logo.svg";
-import { Counter } from "./features/counter/Counter";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
@@ -68,7 +66,7 @@ const router = createBrowserRouter([
     element: (<Protected><OrderSuccess></OrderSuccess></Protected>),
   },
   {
-    path: "/orders",
+    path: "/user_orders",
     element: (<Protected><UserOrdersPage></UserOrdersPage></Protected>),
   },
   {

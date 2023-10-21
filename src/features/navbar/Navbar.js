@@ -13,12 +13,12 @@ import { selectUserInfo } from "../user/userSlice";
 
 const navigation = [
   { name: "Urban Clothing", link: "/", user: true },
-  { name: "Products", link: "/admin", admin: true },
-  { name: "Orders", link: "/admin/orders", admin: true },
+  { name: "Admin Products", link: "/admin", admin: true },
+  { name: "Admin Orders", link: "/admin/orders", admin: true },
 ];
 const userNavigation = [
   { name: "Profile", link: "/profile" },
-  { name: "Orders", link: "/orders" },
+  { name: "Orders", link: "/user_orders" },
   { name: "Sign Out", link: "/logout" },
 ];
 

@@ -1,6 +1,6 @@
 export function fetchProductById(id) {
   return new Promise(async(resolve) =>{
-    const response = await fetch('http://localhost:8000/products/' + id);
+    const response = await fetch('/products/' + id);
     const data = await response.json();
     resolve({data});
   }
@@ -31,7 +31,7 @@ export function fetchProductsByFilters(filter, sort, pagination, admin) {
 
 
   return new Promise(async(resolve) =>{
-    const response = await fetch('http://localhost:8000/products?' + queryString);
+    const response = await fetch('/products?' + queryString);
     const data = await response.json();
     const totalItems = await response.headers.get('X-Total-Count');
     resolve({data:{products:data,totalItems:+totalItems}});
@@ -41,7 +41,7 @@ export function fetchProductsByFilters(filter, sort, pagination, admin) {
 
 export function fetchCategories() {
   return new Promise(async(resolve) =>{
-    const response = await fetch('http://localhost:8000/categories')
+    const response = await fetch('/categories')
     const data = await response.json();
     resolve({data});
   }
@@ -49,7 +49,7 @@ export function fetchCategories() {
 }
 export function fetchBrands() {
   return new Promise(async(resolve) =>{
-    const response = await fetch('http://localhost:8000/brands')
+    const response = await fetch('/brands')
     const data = await response.json();
     resolve({data});
   }
@@ -58,7 +58,7 @@ export function fetchBrands() {
 
 export function productCreate(product) {
   return new Promise(async(resolve) =>{
-    const response = await fetch('http://localhost:8000/products/',{
+    const response = await fetch('/products/',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ export function productCreate(product) {
 
 export function productUpdate(update) {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:8000/products/" + update.id, {
+    const response = await fetch("/products/" + update.id, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
