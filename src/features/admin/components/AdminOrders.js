@@ -69,6 +69,21 @@ function AdminOrders() {
     }
   };
 
+  const chooseColorPayment = (status) => {
+    switch (status) {
+      case "Pending":
+        return "bg-yellow-200 text-yellow-800";
+      case "Cancelled":
+        return "bg-red-200 text-red-800";
+      case "Processing":
+        return "bg-blue-200 text-blue-800";
+      case "Received":
+        return "bg-green-200 text-green-800";
+      default:
+        return "bg-grey-200 text-grey-800";
+    }
+  };
+
   useEffect(() => {
     const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
     dispatch(fetchAllOrdersAsync({ sort, pagination }));
@@ -208,8 +223,8 @@ function AdminOrders() {
                         </select>
                       ) : (
                         <span
-                          className={`${chooseColor(
-                            order.status
+                          className={`${chooseColorPayment(
+                            order.statusPayment
                           )} py-1 px-3 rounded-full text-xs`}
                         >
                           {order.statusPayment}
